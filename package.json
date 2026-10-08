@@ -1,0 +1,36 @@
+{
+  "name": "economy-flow",
+  "version": "1.0.0",
+  "description": "앱인토스 오늘의 경제 흐름 WebView",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build && ait build",
+    "build:web": "tsc --noEmit && vite build",
+    "preview": "vite preview --host 0.0.0.0",
+    "test": "playwright test",
+    "deploy": "ait deploy"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@apps-in-toss/web-framework": "^3.7.0",
+    "@emotion/react": "^11.14.0",
+    "@toss/tds-mobile": "^2.5.1",
+    "@toss/tds-mobile-ait": "^2.5.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@apps-in-toss/devtools": "^3.7.0",
+    "@playwright/test": "^1.64.0",
+    "@types/node": "^26.6.4",
+    "@types/react": "^18.3.31",
+    "@types/react-dom": "^18.3.7",
+    "@vitejs/plugin-react": "^5.2.0",
+    "typescript": "5.9",
+    "vite": "^7.3.7"
+  },
+  "private": true
+}
