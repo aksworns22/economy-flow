@@ -28,7 +28,16 @@ for (const [result, text] of [
       await page.locator('.weekly-notification button').evaluate((button: HTMLButtonElement) => button.click());
     }
     await expect(page.locator('.notification-result')).toContainText(text);
-    await expect(button).toBeEnabled();
+    if (['newAgreement', 'error'].includes(result)) {
+      await page.locator('.weekly-notification').screenshot({ path: `output/notification-preview/result-${result}.png` });
+    }
+    if (['newAgreement', 'alreadyAgreed'].includes(result)) {
+      await expect(page.getByRole('button', { name: '신청 완료', exact: true })).toBeDisabled();
+    } else if (['error', 'throw'].includes(result)) {
+      await expect(page.getByRole('button', { name: '다시 시도하기' })).toBeEnabled();
+    } else {
+      await expect(button).toBeEnabled();
+    }
     if (result !== 'unsupported') {
       expect(await page.evaluate(() => (window as any).notificationCode)).toBe('today-economy-flow-economy-briefing-tuesday-10am');
       expect(await page.evaluate(() => (window as any).notificationCalls)).toBe(1);
