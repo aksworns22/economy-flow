@@ -9,6 +9,26 @@ function ArticlePhoto({ image }: { image: EditorialImage }) {
   </figure>;
 }
 
+function SummarySkeleton() {
+  return <section className="summary-skeleton" role="status" aria-label="오늘의 경제 요약을 불러오는 중">
+    <div aria-hidden="true">
+      <div className="skeleton-header">
+        <div className="skeleton-block skeleton-title" />
+        <div className="skeleton-block skeleton-title short" />
+        <div className="skeleton-block skeleton-date" />
+      </div>
+      <div className="skeleton-card">
+        <div className="skeleton-block skeleton-heading" />
+        {[0, 1, 2].map(i => <div className="skeleton-point" key={i}>
+          <div className="skeleton-block skeleton-number" />
+          <div className="skeleton-lines"><div className="skeleton-block" /><div className="skeleton-block short" /></div>
+        </div>)}
+      </div>
+      <div className="skeleton-body"><div className="skeleton-block skeleton-heading" /><div className="skeleton-lines"><div className="skeleton-block" /><div className="skeleton-block" /><div className="skeleton-block short" /></div></div>
+    </div>
+  </section>;
+}
+
 export default function App() {
   const [summary, setSummary] = useState<DailySummary | null>(null);
   const [fromCache, setFromCache] = useState(false);
@@ -36,7 +56,7 @@ export default function App() {
   useEffect(() => {
     const update = () => {
       const length = document.documentElement.scrollHeight - window.innerHeight;
-      setProgress(length > 0 ? Math.min(100, window.scrollY / length * 100) : 100);
+      setProgress(!summary ? 0 : length > 0 ? Math.min(100, window.scrollY / length * 100) : 100);
     };
     window.addEventListener('scroll', update, { passive: true });
     window.addEventListener('resize', update);
@@ -54,7 +74,7 @@ export default function App() {
     <div className="reading-progress" aria-hidden="true"><div style={{ width: `${progress}%` }} /></div>
     <main className="reader">
 
-      {error ? <section className="status" role="alert"><h1>요약을 불러오지 못했어요</h1><p>잠시 후 다시 시도해 주세요.</p><Button onClick={() => setAttempt(v => v + 1)}>다시 불러오기</Button></section> : !summary ? <p className="status" role="status">오늘의 요약을 가져오고 있어요.</p> : <article>
+      {error ? <section className="status" role="alert"><h1>요약을 불러오지 못했어요</h1><p>잠시 후 다시 시도해 주세요.</p><Button onClick={() => setAttempt(v => v + 1)}>다시 불러오기</Button></section> : !summary ? <SummarySkeleton /> : <article>
         {fromCache && <p className="sample-note" role="status">최신 콘텐츠를 가져오지 못해 마지막으로 읽은 내용을 보여드려요. <button onClick={() => setAttempt(v => v + 1)}>다시 불러오기</button></p>}
         <header className={`article-header${summary.coverImage ? ' has-cover' : ''}`}>
           {summary.coverImage && <img className="hero-image" src={summary.coverImage.src} alt={summary.coverImage.alt} width="1200" height="800" decoding="async" />}
