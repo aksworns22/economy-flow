@@ -92,3 +92,17 @@ Codex에 요청할 예시:
 초기 Pages 콘텐츠는 기존 예시입니다. 정확한 비용 계측은 후속 작업입니다.
 
 콘텐츠 검증 테스트: `node --experimental-strip-types --test scripts/content.test.ts`.
+
+## 화요일 경제 뉴스 알림
+
+콘텐츠는 매일 갱신하고 알림은 매주 화요일 오전 10시(한국 시간)에 토스 콘솔에서 발송합니다. 첫 두 달은 콘솔 정기 발송으로 운영합니다.
+
+`.env`의 `VITE_NOTIFICATION_TEMPLATE_CODE`에 캠페인 발송 코드 `today-economy-flow-economy-briefing-tuesday-10am`을 연결했습니다. 빈 값으로 설정하고 다시 빌드하면 신청 영역이 숨겨집니다. 이 코드는 공개 클라이언트 설정이며 비밀 키가 아닙니다.
+
+본문 하단, 기사 출처 위의 ‘알림받기’는 SDK 3.7의 `Notification.requestAgreement`로 공식 동의 화면을 호출합니다. 신규 동의·기존 동의·거절·오류를 안내하며 처리 중 중복 요청을 차단하고 완료 및 화면 해제 시 구독을 정리합니다. 동의 상태를 로컬에 영구 저장하지 않습니다. 일반 브라우저와 미지원 토스 버전에서는 최신 토스 앱 이용 안내를 표시합니다.
+
+새 `.ait` 번들을 콘솔에 업로드한 뒤 실제 토스 앱에서 동의와 알림 클릭 후 당일 본문 진입을 확인하고 출시합니다. 캠페인에 정기 발송 동의문이 연결되고 검수 승인되었는지 확인한 후 정기 발송을 활성화합니다. 캠페인 생성만으로 승인·출시·발송 활성화가 완료된 것은 아닙니다.
+
+해제 경로: 토스 → 전체 → 설정 → 알림 → 서비스별 알림.
+
+공식 참고: [알림 동의 SDK](https://developers-apps-in-toss.toss.im/documentation/sdk/domains-api/notification/notification.requestagreement.md), [푸시알림 콘솔 가이드](https://developers-apps-in-toss.toss.im/guide/marketing/smart-message.md).
