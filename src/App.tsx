@@ -32,11 +32,7 @@ function ArticlePhoto({ image }: { image: EditorialImage }) {
 function SummarySkeleton() {
   return <section className="summary-skeleton" role="status" aria-label="오늘의 경제 요약을 불러오는 중">
     <div aria-hidden="true">
-      <div className="skeleton-header">
-        <div className="skeleton-block skeleton-title" />
-        <div className="skeleton-block skeleton-title short" />
-        <div className="skeleton-block skeleton-date" />
-      </div>
+      <div className="skeleton-cover" />
       <div className="skeleton-card">
         <div className="skeleton-block skeleton-heading" />
         {[0, 1, 2].map(i => <div className="skeleton-point" key={i}>
