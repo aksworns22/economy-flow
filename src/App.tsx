@@ -6,7 +6,6 @@ import type { DailySummary, EditorialImage } from './content/types';
 function ArticlePhoto({ image }: { image: EditorialImage }) {
   return <figure className="article-photo">
     <img src={image.src} alt={image.alt} width="1200" height="800" loading="lazy" decoding="async" />
-  {image.isAiGenerated && <figcaption>AI 생성 이미지</figcaption>}
   </figure>;
 }
 
@@ -59,7 +58,6 @@ export default function App() {
         {fromCache && <p className="sample-note" role="status">최신 콘텐츠를 가져오지 못해 마지막으로 읽은 내용을 보여드려요. <button onClick={() => setAttempt(v => v + 1)}>다시 불러오기</button></p>}
         <header className={`article-header${summary.coverImage ? ' has-cover' : ''}`}>
           {summary.coverImage && <img className="hero-image" src={summary.coverImage.src} alt={summary.coverImage.alt} width="1200" height="800" decoding="async" />}
-          {summary.coverImage?.isAiGenerated && <span className="ai-image-label">AI 생성 이미지</span>}
           <div className="hero-content">
           <div className="date-row"><time dateTime={summary.date}>{new Intl.DateTimeFormat('ko-KR', { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long', timeZone: 'Asia/Seoul' }).format(new Date(`${summary.date}T00:00:00+09:00`))}</time></div>
           <h1>{summary.title}</h1>{summary.description && <p className="article-deck">{summary.description}</p>}
