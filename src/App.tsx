@@ -90,7 +90,20 @@ export default function App() {
     <div className="reading-progress" aria-hidden="true"><div style={{ width: `${progress}%` }} /></div>
     <main className="reader">
 
-      {error ? <section className="status" role="alert"><h1>요약을 불러오지 못했어요</h1><p>잠시 후 다시 시도해 주세요.</p><Button onClick={() => setAttempt(v => v + 1)}>다시 불러오기</Button></section> : !summary ? <SummarySkeleton /> : <article>
+      {error ? <section className="status" role="alert">
+        <div className="status-content">
+          <svg className="status-icon" width="88" height="88" viewBox="0 0 88 88" fill="none" aria-hidden="true">
+            <rect x="17" y="8" width="54" height="70" rx="12" fill="var(--adaptiveGrey100,#f2f4f6)" />
+            <path d="M30 27h28M30 39h18" stroke="var(--adaptiveGrey300,#d1d6db)" strokeWidth="5" strokeLinecap="round" />
+            <circle cx="64" cy="65" r="19" fill="var(--adaptiveGrey500,#8b95a1)" />
+            <path d="M64 55v10" stroke="var(--adaptiveBackground,#fff)" strokeWidth="4" strokeLinecap="round" />
+            <circle cx="64" cy="72" r="2" fill="var(--adaptiveBackground,#fff)" />
+          </svg>
+          <h1>경제 흐름을 불러오지 못했어요</h1>
+          <p>잠시 후 다시 시도해 주세요</p>
+        </div>
+        <div className="status-action"><Button onClick={() => setAttempt(v => v + 1)}>다시 불러오기</Button></div>
+      </section> : !summary ? <SummarySkeleton /> : <article>
         {fromCache && <p className="sample-note" role="status">최신 콘텐츠를 가져오지 못해 마지막으로 읽은 내용을 보여드려요. <button onClick={() => setAttempt(v => v + 1)}>다시 불러오기</button></p>}
         <header className={`article-header${summary.coverImage ? ' has-cover' : ''}`}>
           {summary.coverImage && <LoadingPhoto key={summary.coverImage.src} image={summary.coverImage} cover />}
