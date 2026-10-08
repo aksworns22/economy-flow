@@ -1,0 +1,5 @@
+Mode: built-in image_gen
+Use case: stylized-concept
+Asset type: landscape editorial image for a Korean economics article, 1536x1024
+Primary request: A conceptual illustration of monetary policy meeting minutes: an open document with abstract unreadable lines, a round meeting table and a clock, symbolizing a record of an earlier meeting.
+Style: refined magazine illustration, tactile paper texture, soft blue and warm amber on cream, restrained dimensional shapes. Balanced spacious composition. No text, numbers, logos or watermark. A conceptual illustration, not a news photograph.

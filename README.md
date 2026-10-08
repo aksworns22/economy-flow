@@ -78,8 +78,8 @@ npm test
 
 현재는 Codex에서 뉴스 조사·글 작성·이미지 생성·업로드를 진행합니다. GitHub Actions는 콘텐츠 검증과 Pages 배포만 수행합니다. AI API 키나 예약 생성 설정은 필요 없습니다.
 
-1. 출처 원문을 확인하고 날짜·수치·사실을 대조하여 경제 브리핑을 작성합니다. `src/content/types.ts`의 형식을 따르고 `description`도 주제에 맞게 작성합니다. 실제 콘텐츠는 `isExample: false`로 설정합니다.
-2. Codex 이미지 생성으로 표지를 만들고 `content/images/YYYY-MM-DD/`에 저장합니다. 수정본은 새 파일명으로 저장합니다. JSON 이미지 주소는 `https://aksworns22.github.io/economy-flow/images/YYYY-MM-DD/파일명`을 사용하고 `isAiGenerated: true`, `credit: "AI 생성 이미지"`, HTTPS `creditUrl`을 지정합니다.
+1. 한국 언론과 국내 기관의 원문을 우선 사용하고 날짜·수치·사실을 대조하여 경제 브리핑을 작성합니다. 해외 공식 자료는 사실 확인이 필요한 경우 보완 출처로 사용합니다. `src/content/types.ts`의 형식을 따르고 `description`도 주제에 맞게 작성합니다. 실제 콘텐츠는 `isExample: false`로 설정합니다.
+2. 표지와 각 기사 본문의 이미지를 모두 Codex 이미지 생성으로 만들고 `content/images/YYYY-MM-DD/`에 저장합니다. 수정본은 새 파일명으로 저장합니다. JSON 이미지 주소는 `https://aksworns22.github.io/economy-flow/images/YYYY-MM-DD/파일명`을 사용하고 `isAiGenerated: true`, `credit: "AI 생성 이미지"`, HTTPS `creditUrl`을 지정합니다. 생성 정보는 메타데이터로 보관하되 화면에 AI 생성 문구를 표시하지 않습니다.
 3. 기존 `content/today.json`을 `content/archive/날짜-버전.json`으로 보관합니다. 같은 날짜의 수정본도 덮어쓰지 않도록 고유 버전이나 시각을 파일명에 포함합니다.
 4. 새 `content/today.json`을 작성하고 `node --experimental-strip-types scripts/validate-content.ts`로 형식과 이미지 파일을 검증합니다. 형식 검사는 뉴스의 사실 정확성을 보장하지 않습니다.
 5. 생성된 이미지와 본문을 확인한 후 콘텐츠 변경을 커밋하고 GitHub에 push합니다. main에 반영되면 **Publish content to Pages**가 자동 실행됩니다. 검토가 필요한 경우 PR을 만든 뒤 병합합니다.
@@ -89,6 +89,6 @@ Codex에 요청할 예시:
 
 > 오늘의 경제 콘텐츠를 업데이트해줘. 최근 24시간 뉴스의 원문과 수치를 확인하고, 현재 JSON 형식으로 작성해줘. 표지는 AI 일러스트로 만들어줘. 기존 콘텐츠를 보관하고 검증한 뒤 GitHub에 올려 Pages 배포까지 확인해줘.
 
-초기 Pages 콘텐츠는 기존 예시입니다. 기사별 AI 이미지와 정확한 비용 계측은 후속 작업입니다.
+초기 Pages 콘텐츠는 기존 예시입니다. 정확한 비용 계측은 후속 작업입니다.
 
 콘텐츠 검증 테스트: `node --experimental-strip-types --test scripts/content.test.ts`.
