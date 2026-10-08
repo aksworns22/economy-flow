@@ -1,0 +1,149 @@
+{
+  "date": "2026-10-07",
+  "title": "유가와 금리가 오르면,\n주식은 왜 흔들릴까요?",
+  "isExample": true,
+  "readingMinutes": 4,
+  "keyPoints": [
+    "코스피가 1.98% 내렸어요. 채권 금리가 오르면서 기술주에 부담이 커졌어요.",
+    "유가가 오르면 물가도 오를 수 있어요. 물가가 높으면 금리를 내리기 어려워져요.",
+    "한국의 반도체·AI 투자는 늘었어요. 다만 주가는 금리와 유가의 영향도 받아요."
+  ],
+  "sections": [
+    {
+      "id": "stocks",
+      "title": "채권 금리가 오르면 기술주가 흔들려요",
+      "paragraphs": [
+        "10월 7일 코스피는 1.98% 내린 6,803.90에 마감했어요. 기술주가 약세를 보였고, 외국인과 기관은 주식을 팔았어요. **최근 오른 [[bond-yield|채권 금리]]도 주가에 부담을 줬어요.**",
+        "채권 금리는 왜 주가에 영향을 줄까요? 비교적 안전한 채권에서 연 5% 가까운 수익을 기대할 수 있다고 가정해 볼게요. 투자자는 위험을 감수하며 주식을 살 이유가 있는지 따져보게 돼요.",
+        "**금리가 오르면 기업이 미래에 벌 돈의 현재 가치도 낮아질 수 있어요.** 앞으로 성장할 거라는 기대가 주가에 많이 반영된 기술주가 특히 영향을 받아요.",
+        "미국 금리 상승은 미국 기술주를 거쳐 한국 반도체·기술주에도 부담을 줄 수 있어요. 한국 증시를 볼 때 미국 금리도 함께 살펴보는 이유예요."
+      ],
+      "sources": [
+        {
+          "title": "코스피, 1.98% 내린 6803.90 마감…코스닥은 900선 내줘[fn마감시황]",
+          "publisher": "파이낸셜뉴스",
+          "url": "https://www.fnnews.com/news/202610071552318501"
+        }
+      ],
+      "image": {
+        "src": "https://aksworns22.github.io/economy-flow/images/stocks.jpg",
+        "alt": "하락 흐름을 보여주는 주식 캔들 차트",
+        "credit": "Unsplash",
+        "creditUrl": "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3"
+      },
+      "explanation": {
+        "termLabel": "채권 금리란?",
+        "termDescription": "채권을 현재 가격에 샀을 때 기대하는 수익률이에요. 채권 가격이 내려가면 금리는 올라가요."
+      }
+    },
+    {
+      "id": "oil",
+      "title": "유가가 오르면 물가와 금리에도 영향을 줘요",
+      "paragraphs": [
+        "브렌트유 가격이 배럴당 102달러 수준으로 다시 올랐어요. 중동에서 원유 공급이 줄어들 수 있다는 우려가 이어지고 있어요.",
+        "유가가 오르면 운송비와 생산비가 늘 수 있어요. **기업이 늘어난 비용만큼 상품 가격을 올리면 [[inflation|인플레이션]]으로 이어질 수 있어요.** 에너지를 많이 수입하는 한국도 영향을 받아요.",
+        "**물가가 오를 가능성이 커지면 중앙은행은 금리를 내리기 어려워져요.** 기름값이 주식시장에도 영향을 주는 이유예요."
+      ],
+      "sources": [
+        {
+          "title": "Oil prices rise as storms and air strikes threaten supply",
+          "publisher": "Reuters",
+          "url": "https://www.reuters.com/business/energy/oil-prices-rise-storms-air-strikes-threaten-supply-2026-10-07/"
+        }
+      ],
+      "image": {
+        "src": "https://aksworns22.github.io/economy-flow/images/oil.jpg",
+        "alt": "정유시설의 증류탑과 배관",
+        "credit": "Unsplash",
+        "creditUrl": "https://unsplash.com/photos/industrial-oil-refinery-complex-under-a-clear-blue-sky-gZbjx2K7s9I"
+      },
+      "explanation": {
+        "termLabel": "인플레이션이란?",
+        "termDescription": "상품과 서비스의 전반적인 가격이 계속 오르는 현상이에요. 같은 돈으로 살 수 있는 양이 줄어들어요."
+      }
+    },
+    {
+      "id": "fed",
+      "title": "금리가 바뀌기 전에도 시장은 움직여요",
+      "paragraphs": [
+        "미국 중앙은행인 연준은 지난 9월 기준금리를 0.25%포인트 올렸어요. 현재 금리는 3.75~4.00%예요. 금리를 더 올려야 할지는 연준 안에서도 의견이 갈려요.",
+        "시장은 10월보다 연말에 금리를 더 올릴 가능성에 주목하고 있어요. 투자자는 지금의 금리뿐 아니라 앞으로 금리가 어떻게 바뀔지도 살펴봐요.",
+        "예를 들어 연준 의장이 물가가 여전히 높다고 말하면, 투자자는 금리를 더 올리는 [[tightening|긴축]] 정책을 예상할 수 있어요. **이 예상만으로도 채권 가격과 주가, 환율이 움직일 수 있어요.**",
+        "유가가 올라 물가 걱정이 커지면 높은 금리가 오래 이어질 거라는 예상도 커질 수 있어요. 유가와 금리, 주가는 이렇게 연결돼요."
+      ],
+      "sources": [
+        {
+          "title": "Fed minutes: Another rate hike likely coming this year to combat persistent inflation",
+          "publisher": "AP",
+          "url": "https://apnews.com/article/b7ed20e31e1a6fa5da6d78e5fe35b0c3"
+        }
+      ],
+      "image": {
+        "src": "https://aksworns22.github.io/economy-flow/images/fed.jpg",
+        "alt": "미국 연방준비제도 이사회 에클스 건물 전경",
+        "credit": "Federal Reserve · 공개 도메인",
+        "creditUrl": "https://commons.wikimedia.org/wiki/File:Eccles_Building_(26088200676).jpg"
+      },
+      "explanation": {
+        "termLabel": "금리와 긴축이란?",
+        "termDescription": "금리는 돈을 빌릴 때 내는 이자의 비율이에요. 긴축은 물가 상승을 억제하려고 금리를 올리거나 시중에 도는 돈을 줄이는 정책이에요."
+      }
+    },
+    {
+      "id": "investment",
+      "title": "한국의 반도체·AI 투자는 늘었어요",
+      "paragraphs": [
+        "한국의 올해 1~3분기 [[fdi|외국인직접투자(FDI)]] 신고액은 229억 달러예요. 지난해 같은 기간보다 10.8% 늘었어요. 실제로 들어온 투자액도 30.6% 증가했어요. 반도체·AI 시설 관련 투자가 증가에 영향을 줬어요.",
+        "**신고액은 투자하겠다고 밝힌 금액이고, 도착액은 실제로 들어온 금액이에요.** 두 수치를 함께 보면 투자 계획이 얼마나 실행됐는지 살펴볼 수 있어요.",
+        "**투자가 늘어도 당장 주가가 오르는 건 아니에요.** 기업의 성장에 대한 기대와 금리·유가에 대한 부담이 주가에 함께 영향을 주기 때문이에요."
+      ],
+      "sources": [
+        {
+          "title": "반도체·AI에 외국인자금 몰렸다…3분기 누적 투자 도착액 ‘역대 최대’",
+          "publisher": "이데일리",
+          "url": "https://www4.edaily.co.kr/News/Read?mediaCodeNo=257&newsId=03398086645610624"
+        }
+      ],
+      "image": {
+        "src": "https://aksworns22.github.io/economy-flow/images/investment.jpg",
+        "alt": "서버와 네트워크 장비가 설치된 데이터센터",
+        "credit": "Unsplash",
+        "creditUrl": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31"
+      },
+      "explanation": {
+        "termLabel": "외국인직접투자(FDI)란?",
+        "termDescription": "외국인이 다른 나라의 기업 경영에 참여하거나 공장·데이터센터 같은 사업에 직접 투자하는 거예요."
+      }
+    }
+  ],
+  "closing": "유가가 오르면 물가도 오를 수 있어요. 그러면 금리를 내리기 어려워지고, 주식시장에도 부담이 될 수 있어요.",
+  "terms": {
+    "bond-yield": {
+      "label": "채권 금리",
+      "description": "정부나 기업이 발행한 채권을 현재 가격에 사서 보유할 때 기대하는 수익률이에요. 채권 가격과 금리는 반대 방향으로 움직여요.",
+      "example": "비교적 안전한 국채 수익률이 높아지면, 투자자는 위험을 감수하는 주식에서 그만큼 더 높은 수익을 기대하게 돼요. 실제 수익은 매수 가격과 매도 시점 등에 따라 달라져요."
+    },
+    "inflation": {
+      "label": "인플레이션",
+      "description": "상품과 서비스의 전반적인 가격이 지속적으로 오르는 현상이에요. 같은 돈으로 살 수 있는 양은 줄어들어요.",
+      "example": "유가가 오르면 배송비와 생산비가 늘고, 그 비용이 상품 가격에 반영되면서 생활 물가에도 영향을 줄 수 있어요."
+    },
+    "fdi": {
+      "label": "외국인직접투자(FDI)",
+      "description": "외국인이 다른 나라의 기업 경영에 참여하거나 공장·데이터센터 같은 사업에 직접 투자하는 거예요.",
+      "example": "미국 기업이 한국에 데이터센터를 짓는 경우예요. 시설을 짓고 운영하면서 일자리가 생기는 효과를 기대할 수 있어요."
+    },
+    "tightening": {
+      "label": "긴축",
+      "description": "중앙은행이 물가 상승을 억제하려고 금리를 올리거나 시중에 도는 돈을 줄이는 정책이에요.",
+      "example": "금리 인상 → 대출 이자 부담 증가 → 소비와 투자 둔화 → 물가 상승 압력 완화. 효과가 나타나기까지는 시간이 걸릴 수 있어요."
+    }
+  },
+  "coverImage": {
+    "src": "https://aksworns22.github.io/economy-flow/images/finance.jpg",
+    "alt": "아래에서 올려다본 금융가의 고층 빌딩",
+    "credit": "Unsplash",
+    "creditUrl": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab"
+  },
+  "description": "유가와 금리가 주가에 미치는 영향을 살펴봐요."
+}

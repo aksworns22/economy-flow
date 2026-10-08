@@ -1,0 +1,4 @@
+Mode: built-in image_gen
+Use case: stylized-concept
+Asset type: wide cover illustration for a Korean daily economics briefing, landscape 1536x1024
+Primary request: a refined editorial illustration of the connection between oil, bond yields and the stock market. An oil barrel, a gently rising abstract interest-rate curve and a small cluster of financial district buildings form one balanced composition. Soft blue and warm amber on a light cream backdrop, tactile paper texture, restrained dimensional shapes, sophisticated magazine illustration. No text, no numbers, no logos, no watermark. Conceptual image, not a news photograph. Save the generated image to a local file and return its path.
