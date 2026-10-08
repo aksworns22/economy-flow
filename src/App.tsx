@@ -57,7 +57,6 @@ export default function App() {
 
       {error ? <section className="status" role="alert"><h1>요약을 불러오지 못했어요</h1><p>잠시 후 다시 시도해 주세요.</p><Button onClick={() => setAttempt(v => v + 1)}>다시 불러오기</Button></section> : !summary ? <p className="status" role="status">오늘의 요약을 가져오고 있어요.</p> : <article>
         {fromCache && <p className="sample-note" role="status">최신 콘텐츠를 가져오지 못해 마지막으로 읽은 내용을 보여드려요. <button onClick={() => setAttempt(v => v + 1)}>다시 불러오기</button></p>}
-        {summary.isExample && <p className="sample-note">예시 콘텐츠예요.</p>}
         <header className={`article-header${summary.coverImage ? ' has-cover' : ''}`}>
           {summary.coverImage && <img className="hero-image" src={summary.coverImage.src} alt={summary.coverImage.alt} width="1200" height="800" decoding="async" />}
           {summary.coverImage?.isAiGenerated && <span className="ai-image-label">AI 생성 이미지</span>}
@@ -68,7 +67,7 @@ export default function App() {
         </header>
 
         <section className="key-summary" aria-labelledby="key-title"><div className="eyebrow"><h2 id="key-title">오늘의 경제 동향</h2></div><ul>{summary.keyPoints.map((point, i) => <li key={i}><span className="point-number" aria-hidden="true">{i + 1}</span><span>{richText(point)}</span></li>)}</ul></section>
-        {summary.sections.map((section, i) => <section className="news-section" key={section.id} aria-labelledby={`section-${section.id}`}><h3 id={`section-${section.id}`}><span className="section-index">{i + 1}. </span>{section.title}</h3>{section.image && <ArticlePhoto image={section.image} />}{section.paragraphs.map((paragraph, index) => <p key={index}>{richText(paragraph)}</p>)}{section.explanation && <aside className="article-explanation" aria-label={`${section.title} 쉬운 설명`}><dl><div><dt>{section.explanation.termLabel}</dt><dd>{section.explanation.termDescription}</dd></div></dl></aside>}<div className="article-sources" aria-label={`${section.title} 관련 기사`}><div className="source-list">{section.sources.map((source, index) => <p className="source-item" key={index}><span className="source-publisher-inline">{source.publisher}</span>{source.url ? <a href={source.url} target="_blank" rel="noopener noreferrer">{source.title}</a> : <span>{source.title}</span>}</p>)}</div></div></section>)}
+        {summary.sections.map((section, i) => <section className="news-section" key={section.id} aria-labelledby={`section-${section.id}`}><h3 id={`section-${section.id}`}><span className="section-index">{i + 1}. </span>{section.title}</h3>{section.image && <ArticlePhoto image={section.image} />}{section.paragraphs.map((paragraph, index) => <p key={index}>{richText(paragraph)}</p>)}{section.explanation && <aside className="article-explanation" aria-label={`${section.title} 쉬운 설명`}><dl><div><dt>{section.explanation.termLabel}</dt><dd>{section.explanation.termDescription}</dd></div></dl></aside>}<div className="article-sources" aria-label={`${section.title} 관련 기사`}><div className="source-list">{section.sources.map((source, index) => <p className="source-item" key={index}>{source.url ? <a href={source.url} target="_blank" rel="noopener noreferrer">{source.publisher} · {source.title}</a> : <span>{source.publisher} · {source.title}</span>}</p>)}</div></div></section>)}
       </article>}
     </main>
   </>;

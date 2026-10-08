@@ -5,10 +5,11 @@ test('바로 본문 진입, 각 기사 출처, 기사 아래 용어 설명', asy
   page.on('pageerror', error => errors.push(error.message));
   await page.goto('/');
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('유가와 금리가 오르면, 주식은 왜 흔들릴까요?');
-  await expect(page.locator('.sample-note')).toContainText('예시 콘텐츠');
+  await expect(page.getByText('예시 콘텐츠예요.')).toHaveCount(0);
   await expect(page.locator('section.sources')).toHaveCount(0);
   await expect(page.locator('.news-section .article-sources')).toHaveCount(4);
   await expect(page.locator('.article-sources a')).toHaveCount(4);
+  await expect(page.locator('.article-sources a').first()).toHaveText('파이낸셜뉴스 · 코스피, 1.98% 내린 6803.90 마감…코스닥은 900선 내줘[fn마감시황]');
   await expect(page.getByRole('button', { name: '글자 크게 보기' })).toHaveCount(0);
   await expect(page.locator('.hero-image, .article-photo img')).toHaveCount(5);
   for (const image of await page.locator('.hero-image, .article-photo img').all()) {
