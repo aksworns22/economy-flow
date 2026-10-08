@@ -20,6 +20,4 @@
 
 .text-highlight{background:#dcf5e9;color:inherit;padding:2px 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
 
-.ai-image-label { position: absolute; right: 16px; top: 16px; z-index: 2; color: white; background: rgba(0,0,0,.5); padding: 4px 8px; border-radius: 6px; font-size: 12px; }
-.article-photo figcaption { font-size: 12px; color: #6b7684; margin-top: 6px; }
 .sample-note { font-size: 13px; color: #6b7684; padding: 0 20px; }
