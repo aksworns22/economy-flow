@@ -7,6 +7,13 @@ test('바로 본문 진입, 기사별 출처, 모든 용어의 열기와 닫기'
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('물가는 천천히, 금리는 신중하게');
   await expect(page.getByText('가상 상황으로 쓴 예시예요.')).toBeVisible();
   await expect(page.locator('.sources')).toHaveCount(3);
+  await expect(page.locator('.hero-image, .article-photo img')).toHaveCount(3);
+  for (const image of await page.locator('.hero-image, .article-photo img').all()) {
+    await image.scrollIntoViewIfNeeded();
+    await image.evaluate((element: HTMLImageElement) => element.decode());
+    expect(await image.evaluate((element: HTMLImageElement) => element.naturalWidth)).toBeGreaterThan(0);
+  }
+  await page.evaluate(() => window.scrollTo(0, 0));
   await page.screenshot({ path: 'test-results/mobile-reader.png', fullPage: true });
   for (const label of ['인플레이션', '기준금리', '환율']) {
     const trigger = page.getByRole('button', { name: `${label} 뜻 보기` });

@@ -57,3 +57,13 @@ npm test
 설치된 Google Chrome을 이용합니다. 즉시 본문 진입, 모든 용어 설명과 포커스 복귀, Escape, 공식 mock의 토스 backEvent, 기사별 출처, 320px 화면에서 긴 제목·문단과 글자 200% 확대, 마지막 문단까지 읽기를 확인합니다. 모의 backEvent 검증은 실기기 검증을 대신하지 않습니다. 스크린샷은 `test-results/`에 생성됩니다.
 
 공식 참고: [SDK 연동](https://developers-apps-in-toss.toss.im/ai-vibe-coding/tutorials/webview), [TDS](https://tossmini-docs.toss.im/tds-mobile/start/), [토스 테스트](https://developers-apps-in-toss.toss.im/guide/operation/toss).
+
+### 디자인과 사진
+
+토스피드의 [개편 소개](https://toss.im/tossfeed/article/brandnew-tossfeed)를 참고해 제목의 위계, 여백, 본문의 읽기 간격을 조정했습니다. 샘플의 사진은 뉴스 현장 사진이 아닌 경제 관련 자료 사진입니다. `public/images`에 저장해 외부 이미지 서버 연결 없이 표시합니다.
+
+- `market.jpg`: https://images.unsplash.com/photo-1542838132-92c53300491e
+- `finance.jpg`: https://images.unsplash.com/photo-1486406146926-c627a92ad1ab
+- `trade.jpg`: https://images.unsplash.com/photo-1578575437130-527eed3abbec
+
+사진 이용 조건: [Unsplash License](https://unsplash.com/license). 콘텐츠의 선택 항목 `coverImage` 및 `sections[].image`에 `src`, `alt`, `credit`, `creditUrl`을 지정하면 사진과 출처가 표시됩니다. 사진이 없는 기존 콘텐츠도 그대로 사용할 수 있습니다.
