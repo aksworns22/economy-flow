@@ -10,7 +10,7 @@ test('실제 빌드 결과에도 기사 아래 설명이 바로 보인다', asyn
   const content = JSON.parse(readFileSync('content/today.json', 'utf8'));
   await expect(page.locator('.article-explanation')).toHaveCount(content.sections.length);
   await page.locator('.article-explanation').last().scrollIntoViewIfNeeded();
-  await expect(page.locator('.article-explanation').last()).toContainText('인플레이션이란?');
+  await expect(page.locator('.article-explanation').last()).toContainText(content.sections.at(-1).explanation.termLabel);
   await expect(page.getByText('이 기사는요', { exact: true })).toHaveCount(0);
   expect(errors).toEqual([]);
 });
