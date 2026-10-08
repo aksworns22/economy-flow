@@ -1,11 +1,31 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Button } from '@toss/tds-mobile';
 import { loadSummary } from './content/load';
 import type { DailySummary, EditorialImage } from './content/types';
 
+function LoadingPhoto({ image, cover = false }: { image: EditorialImage; cover?: boolean }) {
+  const [state, setState] = useState<'loading' | 'loaded' | 'error'>('loading');
+  const ref = useRef<HTMLImageElement>(null);
+
+  useEffect(() => {
+    const element = ref.current;
+    if (element?.complete) setState(element.naturalWidth > 0 ? 'loaded' : 'error');
+  }, []);
+
+  return <div className={`loading-photo${cover ? ' hero-photo' : ''}`} aria-busy={state === 'loading'}>
+    {state !== 'loaded' && <div className={`photo-placeholder${state === 'loading' ? ' is-loading' : ''}`} aria-hidden="true" />}
+    {state === 'error' ? <span className="photo-error" role="img" aria-label={image.alt}>사진을 불러오지 못했어요</span> : <img
+      ref={ref} src={image.src} alt={image.alt} width="1200" height="800"
+      loading={cover ? 'eager' : 'lazy'} decoding="async"
+      className={`${cover ? 'hero-image ' : ''}${state === 'loaded' ? 'is-loaded' : ''}`}
+      onLoad={() => setState('loaded')} onError={() => setState('error')}
+    />}
+  </div>;
+}
+
 function ArticlePhoto({ image }: { image: EditorialImage }) {
   return <figure className="article-photo">
-    <img src={image.src} alt={image.alt} width="1200" height="800" loading="lazy" decoding="async" />
+    <LoadingPhoto key={image.src} image={image} />
   </figure>;
 }
 
@@ -77,7 +97,7 @@ export default function App() {
       {error ? <section className="status" role="alert"><h1>요약을 불러오지 못했어요</h1><p>잠시 후 다시 시도해 주세요.</p><Button onClick={() => setAttempt(v => v + 1)}>다시 불러오기</Button></section> : !summary ? <SummarySkeleton /> : <article>
         {fromCache && <p className="sample-note" role="status">최신 콘텐츠를 가져오지 못해 마지막으로 읽은 내용을 보여드려요. <button onClick={() => setAttempt(v => v + 1)}>다시 불러오기</button></p>}
         <header className={`article-header${summary.coverImage ? ' has-cover' : ''}`}>
-          {summary.coverImage && <img className="hero-image" src={summary.coverImage.src} alt={summary.coverImage.alt} width="1200" height="800" decoding="async" />}
+          {summary.coverImage && <LoadingPhoto key={summary.coverImage.src} image={summary.coverImage} cover />}
           <div className="hero-content">
           <div className="date-row"><time dateTime={summary.date}>{new Intl.DateTimeFormat('ko-KR', { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long', timeZone: 'Asia/Seoul' }).format(new Date(`${summary.date}T00:00:00+09:00`))}</time></div>
           <h1>{summary.title}</h1>{summary.description && <p className="article-deck">{summary.description}</p>}
