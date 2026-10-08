@@ -72,17 +72,23 @@ npm test
 
 이 저장소의 `content/`만 https://aksworns22.github.io/economy-flow/ 로 배포합니다. 앱 코드는 Pages 배포에 포함하지 않습니다.
 
-1. GitHub Settings → Pages → Source를 **GitHub Actions**로 설정합니다.
-2. `.env.local`에 `VITE_CONTENT_URL=https://aksworns22.github.io/economy-flow/today.json`을 설정하고 `npm run build`로 앱 번들을 다시 만듭니다. 이후 글과 이미지 교체에는 앱 재배포가 필요 없습니다.
-3. 수동 편집은 `content/today.json` 및 `content/images/`를 변경하고 main에 반영합니다. `node --experimental-strip-types scripts/validate-content.ts`로 검증합니다.
-4. AI 생성은 Settings → Secrets and variables → Actions에 `OPENAI_API_KEY`를 등록한 뒤 **Generate daily content PR**을 수동 실행합니다. 기본 모델은 `gpt-5.5`, `gpt-image-1.5`이며 Actions Variables의 `CONTENT_MODEL`, `IMAGE_MODEL`로 변경할 수 있습니다. API 호출에는 별도 비용이 발생합니다.
-5. Settings → Actions → General에서 GitHub Actions의 PR 생성 권한을 허용합니다. 생성 PR과 실행 artifact의 원문 자료·AI 검토를 직접 확인한 뒤 병합합니다.
-6. **Publish content to Pages**가 성공하면 공개 JSON과 사진을 확인합니다. 문제 발견 시 해당 콘텐츠 커밋을 되돌리고 재배포합니다.
+출시 빌드는 `.env.production`의 `VITE_CONTENT_URL`을 사용합니다. 최초 연결 시 `npm run build`로 만든 앱 번들을 토스에 업로드해야 하며, 이후 글과 이미지 변경에는 앱 재배포가 필요 없습니다. 앱은 실행·화면 복귀 시 콘텐츠를 요청하고 실패 시 마지막 정상 콘텐츠를 표시합니다. 캐시가 없으면 재시도 화면을 표시합니다.
 
-생성은 뉴스 검색, 초안 작성, AI 검토, 표지 이미지 1장 생성 순서로 진행하며 API 재시도를 자동 수행하지 않습니다. AI 검토는 원문 대조를 대신하지 않습니다. 예약 실행은 검토 운영이 안정된 후 추가합니다. 초기 Pages 콘텐츠는 기존 예시이며 앱에도 예시 표시를 합니다. 생성 시 이전 콘텐츠는 `content/archive/`에 보관됩니다.
+### Codex에서 콘텐츠 만들기
 
-출시 빌드는 `.env.production`의 Pages 주소를 사용합니다. 앱은 실행·화면 복귀 시 콘텐츠를 요청하고 실패 시 마지막 정상 콘텐츠를 표시합니다. 캐시가 없으면 재시도 화면을 표시합니다. 기사별 AI 이미지와 정확한 비용 계측은 후속 작업입니다.
+현재는 Codex에서 뉴스 조사·글 작성·이미지 생성·업로드를 진행합니다. GitHub Actions는 콘텐츠 검증과 Pages 배포만 수행합니다. AI API 키나 예약 생성 설정은 필요 없습니다.
 
-공식 API 참고: [웹 검색](https://developers.openai.com/api/docs/guides/tools-web-search), [이미지 생성](https://developers.openai.com/api/reference/resources/images/methods/generate).
+1. 출처 원문을 확인하고 날짜·수치·사실을 대조하여 경제 브리핑을 작성합니다. `src/content/types.ts`의 형식을 따르고 `description`도 주제에 맞게 작성합니다. 실제 콘텐츠는 `isExample: false`로 설정합니다.
+2. Codex 이미지 생성으로 표지를 만들고 `content/images/YYYY-MM-DD/`에 저장합니다. 수정본은 새 파일명으로 저장합니다. JSON 이미지 주소는 `https://aksworns22.github.io/economy-flow/images/YYYY-MM-DD/파일명`을 사용하고 `isAiGenerated: true`, `credit: "AI 생성 이미지"`, HTTPS `creditUrl`을 지정합니다.
+3. 기존 `content/today.json`을 `content/archive/날짜-버전.json`으로 보관합니다. 같은 날짜의 수정본도 덮어쓰지 않도록 고유 버전이나 시각을 파일명에 포함합니다.
+4. 새 `content/today.json`을 작성하고 `node --experimental-strip-types scripts/validate-content.ts`로 형식과 이미지 파일을 검증합니다. 형식 검사는 뉴스의 사실 정확성을 보장하지 않습니다.
+5. 생성된 이미지와 본문을 확인한 후 콘텐츠 변경을 커밋하고 GitHub에 push합니다. main에 반영되면 **Publish content to Pages**가 자동 실행됩니다. 검토가 필요한 경우 PR을 만든 뒤 병합합니다.
+6. 배포 성공 후 공개 JSON과 이미지 URL을 확인합니다. 문제가 있으면 콘텐츠 커밋을 되돌리고 재배포합니다.
 
-자동화 모의 API 테스트: `node --experimental-strip-types --test scripts/content.test.ts scripts/generation.test.ts`. 실제 유료 API를 호출하지 않고 검토 실패 시 콘텐츠 유지 및 성공 시 이미지·보관 이력을 확인합니다.
+Codex에 요청할 예시:
+
+> 오늘의 경제 콘텐츠를 업데이트해줘. 최근 24시간 뉴스의 원문과 수치를 확인하고, 현재 JSON 형식으로 작성해줘. 표지는 AI 일러스트로 만들어줘. 기존 콘텐츠를 보관하고 검증한 뒤 GitHub에 올려 Pages 배포까지 확인해줘.
+
+초기 Pages 콘텐츠는 기존 예시이며 앱에도 예시 표시를 합니다. 기사별 AI 이미지와 정확한 비용 계측은 후속 작업입니다.
+
+콘텐츠 검증 테스트: `node --experimental-strip-types --test scripts/content.test.ts`.
