@@ -1,0 +1,33 @@
+name: Publish content to Pages
+on:
+  push:
+    branches: [main]
+    paths: ['content/**', 'src/content/**', 'scripts/validate-content.ts', '.github/workflows/pages.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: content-pages
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: node --experimental-strip-types scripts/validate-content.ts
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: content
+      - uses: actions/deploy-pages@v4
+        id: deploy
+      - name: Check published JSON
+        run: curl --fail --retry 5 --retry-delay 10 https://aksworns22.github.io/economy-flow/today.json -o /tmp/today.json

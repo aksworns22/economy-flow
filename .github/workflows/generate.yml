@@ -1,0 +1,42 @@
+name: Generate daily content PR
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+  pull-requests: write
+concurrency:
+  group: content-generation
+  cancel-in-progress: false
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Generate and validate
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          CONTENT_MODEL: ${{ vars.CONTENT_MODEL }}
+          IMAGE_MODEL: ${{ vars.IMAGE_MODEL }}
+        run: node --experimental-strip-types scripts/generate-content.ts
+      - name: Open review PR
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          branch="codex/content-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git switch -c "$branch"
+          git add content
+          git commit -m '새 경제 브리핑과 AI 표지 생성'
+          git push origin "$branch"
+          gh pr create --title '오늘의 경제 콘텐츠 검토' --body-file .github/content-pr.md --base main --head "$branch"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: content-review
+          path: output/generation
+          retention-days: 7

@@ -26,7 +26,7 @@
         }
       ],
       "image": {
-        "src": "/images/stocks.jpg",
+        "src": "https://aksworns22.github.io/economy-flow/images/stocks.jpg",
         "alt": "하락 흐름을 보여주는 주식 캔들 차트",
         "credit": "Unsplash",
         "creditUrl": "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3"
@@ -52,7 +52,7 @@
         }
       ],
       "image": {
-        "src": "/images/oil.jpg",
+        "src": "https://aksworns22.github.io/economy-flow/images/oil.jpg",
         "alt": "정유시설의 증류탑과 배관",
         "credit": "Unsplash",
         "creditUrl": "https://unsplash.com/photos/industrial-oil-refinery-complex-under-a-clear-blue-sky-gZbjx2K7s9I"
@@ -79,7 +79,7 @@
         }
       ],
       "image": {
-        "src": "/images/fed.jpg",
+        "src": "https://aksworns22.github.io/economy-flow/images/fed.jpg",
         "alt": "미국 연방준비제도 이사회 에클스 건물 전경",
         "credit": "Federal Reserve · 공개 도메인",
         "creditUrl": "https://commons.wikimedia.org/wiki/File:Eccles_Building_(26088200676).jpg"
@@ -105,7 +105,7 @@
         }
       ],
       "image": {
-        "src": "/images/investment.jpg",
+        "src": "https://aksworns22.github.io/economy-flow/images/investment.jpg",
         "alt": "서버와 네트워크 장비가 설치된 데이터센터",
         "credit": "Unsplash",
         "creditUrl": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31"
@@ -140,7 +140,7 @@
     }
   },
   "coverImage": {
-    "src": "/images/finance.jpg",
+    "src": "https://aksworns22.github.io/economy-flow/images/finance.jpg",
     "alt": "아래에서 올려다본 금융가의 고층 빌딩",
     "credit": "Unsplash",
     "creditUrl": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab"
