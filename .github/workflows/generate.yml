@@ -16,6 +16,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
+      - name: Test generation failure and success paths
+        run: node --experimental-strip-types --test scripts/content.test.ts scripts/generation.test.ts
       - name: Generate and validate
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}

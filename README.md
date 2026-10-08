@@ -84,3 +84,5 @@ npm test
 출시 빌드는 `.env.production`의 Pages 주소를 사용합니다. 앱은 실행·화면 복귀 시 콘텐츠를 요청하고 실패 시 마지막 정상 콘텐츠를 표시합니다. 캐시가 없으면 재시도 화면을 표시합니다. 기사별 AI 이미지와 정확한 비용 계측은 후속 작업입니다.
 
 공식 API 참고: [웹 검색](https://developers.openai.com/api/docs/guides/tools-web-search), [이미지 생성](https://developers.openai.com/api/reference/resources/images/methods/generate).
+
+자동화 모의 API 테스트: `node --experimental-strip-types --test scripts/content.test.ts scripts/generation.test.ts`. 실제 유료 API를 호출하지 않고 검토 실패 시 콘텐츠 유지 및 성공 시 이미지·보관 이력을 확인합니다.
