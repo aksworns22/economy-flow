@@ -65,7 +65,11 @@ export default function App() {
         </header>
 
         <section className="key-summary" aria-labelledby="key-title"><div className="eyebrow"><h2 id="key-title">오늘의 경제 동향</h2></div><ul>{summary.keyPoints.map((point, i) => <li key={i}><span className="point-number" aria-hidden="true">{i + 1}</span><span>{richText(point)}</span></li>)}</ul></section>
-        {summary.sections.map((section, i) => <section className="news-section" key={section.id} aria-labelledby={`section-${section.id}`}><h3 id={`section-${section.id}`}><span className="section-index">{i + 1}. </span>{section.title}</h3>{section.image && <ArticlePhoto image={section.image} />}{section.paragraphs.map((paragraph, index) => <p key={index}>{richText(paragraph)}</p>)}{section.explanation && <aside className="article-explanation" aria-label={`${section.title} 쉬운 설명`}><dl><div><dt>{section.explanation.termLabel}</dt><dd>{section.explanation.termDescription}</dd></div></dl></aside>}<div className="article-sources" aria-label={`${section.title} 관련 기사`}><div className="source-list">{section.sources.map((source, index) => <p className="source-item" key={index}>{source.url ? <a href={source.url} target="_blank" rel="noopener noreferrer">{source.publisher} · {source.title}</a> : <span>{source.publisher} · {source.title}</span>}</p>)}</div></div></section>)}
+        {summary.sections.map((section, i) => <section className="news-section" key={section.id} aria-labelledby={`section-${section.id}`}><h3 id={`section-${section.id}`}><span className="section-index">{i + 1}. </span>{section.title}</h3>{section.image && <ArticlePhoto image={section.image} />}{section.paragraphs.map((paragraph, index) => <p key={index}>{richText(paragraph)}</p>)}{section.explanation && <aside className="article-explanation" aria-label={`${section.title} 쉬운 설명`}><dl><div><dt>{section.explanation.termLabel}</dt><dd>{section.explanation.termDescription}</dd></div></dl></aside>}</section>)}
+        <footer className="article-sources" aria-labelledby="sources-title">
+          <h2 id="sources-title">기사 출처</h2>
+          <div className="source-list">{summary.sections.flatMap(section => section.sources.map((source, index) => <p className="source-item" key={`${section.id}-${index}`}>{source.url ? <a href={source.url} target="_blank" rel="noopener noreferrer">{source.publisher} · {source.title}</a> : <span>{source.publisher} · {source.title}</span>}</p>))}</div>
+        </footer>
       </article>}
     </main>
   </>;
