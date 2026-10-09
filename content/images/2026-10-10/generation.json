@@ -1,0 +1,9 @@
+{
+  "tool": "image_gen built-in",
+  "style": "Polished hand-painted editorial style, soft blue and cream with subtle coral accents, restrained composition, landscape 3:2. No text, letters, numbers, logos, watermarks or real bank branding.",
+  "subjects": {
+    "cover-v1.png": "Bank building, luminous AI chip and protective shield; cost of AI cybersecurity.",
+    "attack-v1.png": "AI processor connected to many server nodes with small red warning indicators; automated cyber attacks.",
+    "bank-v1.png": "Bank security perimeter with large secured entrance and smaller overlooked side entrance; security gaps."
+  }
+}
