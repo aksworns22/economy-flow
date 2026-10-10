@@ -22,6 +22,11 @@
       "tool": "image_gen built-in",
       "path": "cover-otter-v3.png",
       "prompt": "Edit this cover illustration to be a complete natural scene, with NO accommodation for headline text. Completely REMOVE the dark blue fade, navy gradient, blue fog and empty lower half. Fully paint the lower half: continue the same brown otter's cream belly, short legs and feet naturally to a sunlit warm beige paved residential courtyard. Its thick brown tail extends to the left. Surround with tasteful normal green landscaping near apartment entrances. Keep the same expressive otter face, exact identity, cheek-touching left paw, right paw holding coral roof house model, buildings and sunny sky. Rebalance the complete portrait composition so the full otter stands naturally centered in the apartment neighborhood; show body and feet clearly. Bright warm cohesive illustration edge to edge, bold clean cartoon outline for otter, softly painted apartment background. No blank space reserved for text, no darkened lower area, no vignette, no gradients obscuring anything, no blue plants or bushes. No text, title, lettering, logos or watermark. Same portrait aspect ratio."
+    },
+    {
+      "tool": "image_gen built-in",
+      "path": "cover-otter-v4-blur.png",
+      "prompt": "Apply ONLY a mild uniform Gaussian blur to the entire provided cover image, equivalent to about 4px radius at its original 1122px width. Make the whole illustration visibly softly out of focus, including otter outlines and face, while preserving recognizable shapes. This is a simple filter edit: preserve exact composition, every subject, pose, colors, brightness, framing and dimensions. Do not redraw, redesign, add objects, remove details, add gradients or darken. No text. Output same portrait composition."
     }
   ]
 }

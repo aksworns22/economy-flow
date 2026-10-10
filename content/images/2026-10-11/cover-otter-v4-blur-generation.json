@@ -1,0 +1,5 @@
+{
+  "tool": "image_gen built-in",
+  "path": "cover-otter-v4-blur.png",
+  "prompt": "Apply ONLY a mild uniform Gaussian blur to the entire provided cover image, equivalent to about 4px radius at its original 1122px width. Make the whole illustration visibly softly out of focus, including otter outlines and face, while preserving recognizable shapes. This is a simple filter edit: preserve exact composition, every subject, pose, colors, brightness, framing and dimensions. Do not redraw, redesign, add objects, remove details, add gradients or darken. No text. Output same portrait composition."
+}
