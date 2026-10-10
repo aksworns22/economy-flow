@@ -13,6 +13,7 @@ export function parseSummary(value: unknown): DailySummary {
   };
   if (data.description !== undefined && !text(data.description)) throw new Error('소개 문장이 올바르지 않아요.');
   if (!validImage(data.coverImage)) throw new Error('대표 사진 형식이 올바르지 않아요.');
+  if (!validImage(data.summaryComic)) throw new Error('요약 만화 형식이 올바르지 않아요.');
   if (!text(data.date) || !/^\d{4}-\d{2}-\d{2}$/.test(data.date) || Number.isNaN(Date.parse(data.date)) || !text(data.title) || typeof data.isExample !== 'boolean' || !Number.isFinite(data.readingMinutes) || data.readingMinutes <= 0 || !paragraphs(data.keyPoints) || !text(data.closing) || !data.terms || typeof data.terms !== 'object' || !Array.isArray(data.sections) || !data.sections.length) throw new Error('필수 콘텐츠가 없어요.');
   for (const term of Object.values(data.terms)) if (!term || !text(term.label) || !text(term.description) || !text(term.example)) throw new Error('용어 형식이 올바르지 않아요.');
   const ids = new Set<string>();

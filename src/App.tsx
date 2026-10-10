@@ -30,6 +30,23 @@ function ArticlePhoto({ image }: { image: EditorialImage }) {
   </figure>;
 }
 
+const richText = (text: string) => text.replace(/\[\[([^|\]]+)\|([^\]]+)\]\]/g, '$2')
+    .split(/(\*\*[^*]+\*\*)/g)
+    .map((part, index) => part.startsWith('**') && part.endsWith('**')
+      ? <mark className="text-highlight" key={index}>{part.slice(2, -2)}</mark>
+      : part);
+
+function EconomicSummary({ summary }: { summary: DailySummary }) {
+  const [comicFailed, setComicFailed] = useState(false);
+  if (summary.summaryComic && !comicFailed) {
+    return <section className="comic-summary" aria-labelledby="comic-summary-title">
+      <h2 id="comic-summary-title">4컷 만화로 요약한 경제 흐름</h2>
+      <img src={summary.summaryComic.src} alt={summary.summaryComic.alt} decoding="async" onError={() => setComicFailed(true)} />
+    </section>;
+  }
+  return <section className="key-summary" aria-labelledby="key-title"><div className="eyebrow"><h2 id="key-title">오늘의 경제 동향</h2></div><ul>{summary.keyPoints.map((point, i) => <li key={i}><span className="point-number" aria-hidden="true">{i + 1}</span><span>{richText(point)}</span></li>)}</ul></section>;
+}
+
 function SummarySkeleton() {
   return <section className="summary-skeleton" role="status" aria-label="오늘의 경제 요약을 불러오는 중">
     <div aria-hidden="true">
@@ -81,12 +98,6 @@ export default function App() {
     return () => { window.removeEventListener('scroll', update); window.removeEventListener('resize', update); };
   }, [summary]);
 
-  const richText = (text: string) => text.replace(/\[\[([^|\]]+)\|([^\]]+)\]\]/g, '$2')
-    .split(/(\*\*[^*]+\*\*)/g)
-    .map((part, index) => part.startsWith('**') && part.endsWith('**')
-      ? <mark className="text-highlight" key={index}>{part.slice(2, -2)}</mark>
-      : part);
-
   return <>
     <div className="reading-progress" aria-hidden="true"><div style={{ width: `${progress}%` }} /></div>
     <main className="reader">
@@ -114,7 +125,7 @@ export default function App() {
           </div>
         </header>
 
-        <section className="key-summary" aria-labelledby="key-title"><div className="eyebrow"><h2 id="key-title">오늘의 경제 동향</h2></div><ul>{summary.keyPoints.map((point, i) => <li key={i}><span className="point-number" aria-hidden="true">{i + 1}</span><span>{richText(point)}</span></li>)}</ul></section>
+        <EconomicSummary key={summary.summaryComic?.src ?? 'text-summary'} summary={summary} />
         {summary.sections.map((section, i) => <section className="news-section" key={section.id} aria-labelledby={`section-${section.id}`}><h3 id={`section-${section.id}`}><span className="section-index">{i + 1}. </span>{section.title}</h3>{section.image && <ArticlePhoto image={section.image} />}{section.paragraphs.map((paragraph, index) => <p key={index}>{richText(paragraph)}</p>)}{section.explanation && <aside className="article-explanation" aria-label={`${section.title} 쉬운 설명`}><dl><div><dt>{section.explanation.termLabel}</dt><dd>{section.explanation.termDescription}</dd></div></dl></aside>}</section>)}
         <WeeklyNotification />
         <footer className="article-sources" aria-labelledby="sources-title">

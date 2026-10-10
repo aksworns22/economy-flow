@@ -5,7 +5,7 @@ import { parseSummary } from '../src/content/parse.ts';
 
 export async function validateContent(path = 'content/today.json') {
   const summary = parseSummary(JSON.parse(await readFile(path, 'utf8')));
-  for (const image of [summary.coverImage, ...summary.sections.map(s => s.image)]) {
+  for (const image of [summary.coverImage, summary.summaryComic, ...summary.sections.map(s => s.image)]) {
     if (!image) continue;
     const url = new URL(image.src, 'https://aksworns22.github.io/economy-flow/');
     if (url.origin !== 'https://aksworns22.github.io' || !url.pathname.startsWith('/economy-flow/images/')) throw new Error('이미지는 콘텐츠 저장소에 있어야 해요.');
