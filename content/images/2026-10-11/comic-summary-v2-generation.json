@@ -1,0 +1,5 @@
+{
+  "tool": "image_gen built-in",
+  "path": "comic-summary-v2.png",
+  "prompt": "Edit Image 1 (the 2x2 four panel comic). Image 2 is a reference for the replacement TOP RIGHT panel ONLY. Replace the top right rental-shortage panel with an apartment SALE listings scene matching Image 2: thoughtful otter looking at many sale listings in real estate window. Make these listings read \"매매\", never \"전세\". Two clear speech bubbles inside this top right panel, exact text \"팔려는 집은 늘었는데…\" and \"계약은 또 다른 문제네!\" Remove the old speech \"그런데 전셋집은 왜 이렇게 없지?\" and old caption \"동네마다 다른 주택시장\" entirely. Recompose reference Image 2 to fit the existing portrait top-right panel while keeping both bubbles very readable. Keep the other THREE PANELS from Image 1 unchanged with their text exactly unchanged, preserve the 2x2 grid, same size, white margins and gutters, black rounded borders, no title/footer. Otter identity and art style unchanged. Change only top right panel."
+}

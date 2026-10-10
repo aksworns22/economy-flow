@@ -5,7 +5,7 @@ const content = JSON.parse(readFileSync('content/today.json', 'utf8'));
 
 test('새 앱은 만화 요약 다음에 본문을 표시한다', async ({ page }) => {
   await page.route('https://aksworns22.github.io/economy-flow/today.json', route => route.fulfill({ json: content }));
-  await page.route(content.summaryComic.src, route => route.fulfill({ contentType: 'image/png', body: readFileSync('content/images/2026-10-11/comic-summary-v1.png') }));
+  await page.route(content.summaryComic.src, route => route.fulfill({ contentType: 'image/png', body: readFileSync('content/images/2026-10-11/comic-summary-v2.png') }));
   await page.goto('http://localhost:4173');
   await expect(page.getByRole('heading', { name: '4컷 만화로 요약한 경제 흐름' })).toBeVisible();
   await expect(page.locator('.comic-summary img')).toBeVisible();
