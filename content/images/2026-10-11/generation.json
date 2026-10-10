@@ -1,0 +1,30 @@
+{
+  "tool": "image_gen built-in",
+  "assets": [
+    {
+      "id": "cover",
+      "prompt": "Use case: illustration-story. Korean daily economics mobile app editorial illustration, landscape 3:2. Polished hand-painted gouache, soft blue and ivory with restrained coral accents, clean meaningful composition, no text, numbers, labels, logos, watermark, charts or arrows. Seoul housing affordability: an ordinary Korean couple seen from behind contemplating a layered skyline of modest apartment blocks and distant high rise towers, with a small house key in foreground. Spacious sky, main objects in upper two thirds, bottom dark blue for white headline overlay.",
+      "path": "cover-v1.png"
+    },
+    {
+      "id": "districts",
+      "prompt": "Use case: illustration-story. Korean daily economics mobile app editorial illustration, landscape 3:2. Polished hand-painted gouache, soft blue and ivory with restrained coral accents, clean meaningful composition, no text, numbers, labels, logos, watermark, charts or arrows. Two distinct Seoul residential neighborhoods in one panoramic urban scene, tall modern premium towers beyond the river and modest apartment buildings nearer the viewer, illustrate a city containing different housing markets, no geographical labels.",
+      "path": "districts-v1.png"
+    },
+    {
+      "id": "listings",
+      "prompt": "Use case: illustration-story. Korean daily economics mobile app editorial illustration, landscape 3:2. Polished hand-painted gouache, soft blue and ivory with restrained coral accents, clean meaningful composition, no text, numbers, labels, logos, watermark, charts or arrows. Quiet Korean real estate office window displaying many blank property listing cards, apartment towers in background, an agent inside and one hesitant visitor outside, thoughtful atmosphere.",
+      "path": "listings-v1.png"
+    },
+    {
+      "id": "rent",
+      "prompt": "Use case: illustration-story. Korean daily economics mobile app editorial illustration, landscape 3:2. Polished hand-painted gouache, soft blue and ivory with restrained coral accents, clean meaningful composition, no text, numbers, labels, logos, watermark, charts or arrows. Korean young adult couple at a kitchen table looking at simple apartment floor plans and a small model house, moving boxes and apartment balcony beyond, contemplating where to live.",
+      "path": "rent-v1.png"
+    },
+    {
+      "id": "loan",
+      "prompt": "Use case: illustration-story. Korean daily economics mobile app editorial illustration, landscape 3:2. Polished hand-painted gouache, soft blue and ivory with restrained coral accents, clean meaningful composition, no text, numbers, labels, logos, watermark, charts or arrows. Close editorial still life of a small apartment model, a calculator with blank unmarked display, house keys and modest coin stacks on a household desk, a hand reviewing blank papers, household mortgage budgeting.",
+      "path": "loan-v1.png"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "tool": "image_gen built-in",
+  "assets": [
+    {
+      "path": "comic-panel-1-v2.png",
+      "prompt": "Edit reference comic: extract and recompose the TOP LEFT panel as a standalone LANDSCAPE 3:2 comic illustration, 1536x1024. Single scene only, no grid, no title or footer. Preserve exact otter mascot identity, thick dark outlines, brown fur cream face belly, simple blue cream backgrounds and coral accents, same art style. Otter holding smartphone with apartment and downward arrow, hopeful sly expression. Recompose horizontally with otter on one side, important objects on other, large legible Korean bubbles in upper area. Exactly two speech bubbles, text verbatim \"강남 집값이 내렸다네!\" and \"내 집 마련 기회인가?\". All art and text inside safe margins, dark thin rounded border, no extra scenes. Keep speech bubbles sufficiently large for mobile reading.",
+      "revision": "Precisely edit this comic image with a SINGLE local correction. On the viewer-left raised brown arm of the otter there is a small unnatural rounded brown lump with a black arch outline around x=378,y=660 (image 1536x1024), touching the cream cheek. REMOVE ONLY that small lump and its black arch stroke. Replace it with a simple smooth natural inner arm contour joining raised forearm to shoulder, clean brown/cream boundary. The raised clenched paw at x=240,y=565 must remain exactly unchanged; keep the arm raised in the same pose. Do not add muscles or extra fingers. Preserve all other pixels as closely as possible: same character face, two ears, whiskers, cream belly, arm outer silhouette, phone, buildings, colors, line style, border and composition. All Korean text MUST remain exactly unchanged: \"강남 집값이 내렸다네!\" and \"내 집 마련 기회인가?\" Same landscape 3:2 size. No other edits."
+    },
+    {
+      "path": "comic-panel-2-v1.png",
+      "prompt": "Edit reference comic: extract and recompose the TOP RIGHT panel as a standalone LANDSCAPE 3:2 comic illustration, 1536x1024. Single scene only, no grid, no title or footer. Preserve exact otter mascot identity, thick dark outlines, brown fur cream face belly, simple blue cream backgrounds and coral accents, same art style. Otter outside real estate office studying MANY apartment SALE listing cards marked 매매, pondering. Topic is listings increasing without transactions, NOT rental scarcity. Recompose horizontally with otter on one side, important objects on other, large legible Korean bubbles in upper area. Exactly two speech bubbles, text verbatim \"팔려는 집은 늘었는데…\" and \"계약은 또 다른 문제네!\". All art and text inside safe margins, dark thin rounded border, no extra scenes. Keep speech bubbles sufficiently large for mobile reading."
+    },
+    {
+      "path": "comic-panel-3-v1.png",
+      "prompt": "Edit reference comic: extract and recompose the BOTTOM LEFT panel as a standalone LANDSCAPE 3:2 comic illustration, 1536x1024. Single scene only, no grid, no title or footer. Preserve exact otter mascot identity, thick dark outlines, brown fur cream face belly, simple blue cream backgrounds and coral accents, same art style. Otter at table with moving boxes and tiny house model, finger on cheek, scheming expression. Recompose horizontally with otter on one side, important objects on other, large legible Korean bubbles in upper area. Exactly two speech bubbles, text verbatim \"전세가 부담되니… 차라리 살까?\" and \"대출을 보태면…\". All art and text inside safe margins, dark thin rounded border, no extra scenes. Keep speech bubbles sufficiently large for mobile reading."
+    },
+    {
+      "path": "comic-panel-4-v1.png",
+      "prompt": "Edit reference comic: extract and recompose the BOTTOM RIGHT panel as a standalone LANDSCAPE 3:2 comic illustration, 1536x1024. Single scene only, no grid, no title or footer. Preserve exact otter mascot identity, thick dark outlines, brown fur cream face belly, simple blue cream backgrounds and coral accents, same art style. Otter shocked holding calculator, tall pile of monthly bills and tiny house model. Recompose horizontally with otter on one side, important objects on other, large legible Korean bubbles in upper area. Exactly two speech bubbles, text verbatim \"앗, 매달 갚을 돈!\" and \"집값만 볼 게 아니었네.\". All art and text inside safe margins, dark thin rounded border, no extra scenes. Keep speech bubbles sufficiently large for mobile reading."
+    },
+    {
+      "tool": "image_gen built-in",
+      "path": "cover-otter-v3.png",
+      "prompt": "Edit this cover illustration to be a complete natural scene, with NO accommodation for headline text. Completely REMOVE the dark blue fade, navy gradient, blue fog and empty lower half. Fully paint the lower half: continue the same brown otter's cream belly, short legs and feet naturally to a sunlit warm beige paved residential courtyard. Its thick brown tail extends to the left. Surround with tasteful normal green landscaping near apartment entrances. Keep the same expressive otter face, exact identity, cheek-touching left paw, right paw holding coral roof house model, buildings and sunny sky. Rebalance the complete portrait composition so the full otter stands naturally centered in the apartment neighborhood; show body and feet clearly. Bright warm cohesive illustration edge to edge, bold clean cartoon outline for otter, softly painted apartment background. No blank space reserved for text, no darkened lower area, no vignette, no gradients obscuring anything, no blue plants or bushes. No text, title, lettering, logos or watermark. Same portrait aspect ratio."
+    }
+  ]
+}
