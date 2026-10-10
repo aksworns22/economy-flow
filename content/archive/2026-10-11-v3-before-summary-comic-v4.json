@@ -1,6 +1,6 @@
 {
   "date": "2026-10-11",
-  "version": "2026-10-11-v5",
+  "version": "2026-10-11-v3",
   "description": "집값과 전세, 대출은 어떻게 연결돼 있을까요?",
   "title": "강남 집값은 떨어지는데,\n왜 내가 살 집은 더 비싸질까요?",
   "isExample": false,
@@ -149,13 +149,6 @@
   "coverImage": {
     "src": "https://aksworns22.github.io/economy-flow/images/2026-10-11/cover-otter-v4-blur.png",
     "alt": "아파트를 배경으로 집 모형을 들고 내 집 마련을 고민하는 수달",
-    "credit": "AI 생성 이미지",
-    "creditUrl": "https://openai.com/index/image-generation/",
-    "isAiGenerated": true
-  },
-  "summaryComic": {
-    "src": "https://aksworns22.github.io/economy-flow/images/2026-10-11/comic-summary-v2.png",
-    "alt": "수달의 4컷 요약: 집값 하락 소식에 기대하지만, 팔려는 매물이 늘어도 계약은 별개임을 생각하고, 전세 부담에 매수를 고민하다 매달 갚을 대출금까지 확인해야 함을 깨달아요.",
     "credit": "AI 생성 이미지",
     "creditUrl": "https://openai.com/index/image-generation/",
     "isAiGenerated": true

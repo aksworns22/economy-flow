@@ -10,6 +10,7 @@ export interface DailySummary {
   isExample: boolean;
   readingMinutes: number;
   coverImage?: EditorialImage;
+  summaryComic?: EditorialImage;
   keyPoints: string[];
   sections: NewsSection[];
   closing: string;

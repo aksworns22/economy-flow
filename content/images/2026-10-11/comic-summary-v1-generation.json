@@ -1,0 +1,5 @@
+{
+  "tool": "image_gen built-in",
+  "path": "comic-summary-v1.png",
+  "prompt": "Edit attached comic into a clean standalone FOUR-PANEL comic image. Remove the entire header area (date, masthead, title \"집값은 내렸다는데?\" and decorations) and entire footer (sentence and underline). Output ONLY the four existing panels as a tight 2x2 grid. Preserve each panel scene, otter design, exact internal Korean dialogue and order unchanged. Trim canvas to fit just this grid, approximately portrait 1024x1200. Change all OUTSIDE-PANEL margins and grid gutters to pure solid WHITE #FFFFFF, no cream paper texture, no beige background, no card or shadow. Keep existing black rounded panel borders and a small even white gutter between panels. Do not add any text outside panels. On top left panel ensure the raised arm has a smooth natural contour with NO extra bump near cheek. Retain all speech bubbles within panels exactly. No other changes."
+}

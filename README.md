@@ -106,3 +106,9 @@ Codex에 요청할 예시:
 해제 경로: 토스 → 전체 → 설정 → 알림 → 서비스별 알림.
 
 공식 참고: [알림 동의 SDK](https://developers-apps-in-toss.toss.im/documentation/sdk/domains-api/notification/notification.requestagreement.md), [푸시알림 콘솔 가이드](https://developers-apps-in-toss.toss.im/guide/marketing/smart-message.md).
+
+## 요약 만화와 앱 업데이트 전환
+
+`summaryComic`은 `coverImage`와 같은 이미지 메타데이터 형식의 선택 항목입니다. `keyPoints`는 구버전 앱과 이미지 실패 시 사용할 요약으로 계속 채웁니다. 기존 앱은 알 수 없는 `summaryComic` 필드를 무시하고 ‘오늘의 경제 동향’을 유지합니다. 이 변경을 포함한 새 앱은 만화가 있으면 ‘4컷 만화로 요약한 경제 흐름’과 원래 비율의 만화를 표시한 뒤 바로 첫 본문으로 이어집니다. 만화가 없거나 로딩에 실패하면 기존 요약을 표시합니다.
+
+콘텐츠와 이미지의 Pages 배포는 앱 승인 전에 진행해도 됩니다. UI 전환에는 이 코드로 빌드한 `.ait`를 콘솔에 업로드하고 업데이트 검수 승인 후 배포하는 과정이 필요합니다. 승인 상태를 조회하거나 날짜로 전환하지 않으며, 사용자가 새 앱 번들을 제공받을 때 자동으로 새 UI가 나타납니다. 승인만 나고 업데이트 배포가 되지 않은 경우 기존 UI가 유지됩니다. 이후 날짜에도 만화를 표시하려면 해당 콘텐츠에 `summaryComic`을 넣어야 합니다. 만화의 바깥 제목·날짜·하단 문구는 이미지에 포함하지 않고, 섹션 제목은 앱의 일반 텍스트로 표시합니다.
