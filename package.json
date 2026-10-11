@@ -4,6 +4,7 @@
   "description": "앱인토스 오늘의 경제 흐름 WebView",
   "scripts": {
     "dev": "vite",
+    "dev:content": "vite --config scripts/vite.content.config.ts",
     "build": "tsc --noEmit && vite build && ait build",
     "build:web": "tsc --noEmit && vite build",
     "preview": "vite preview --host 0.0.0.0",

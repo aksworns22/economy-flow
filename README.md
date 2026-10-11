@@ -13,6 +13,16 @@ npm run dev
 
 브라우저에서 http://localhost:5173 에 접속합니다. 로컬 개발의 AIT 버튼은 공식 개발 도구이며 실제 출시 번들에는 포함되지 않습니다. 휴대폰 브라우저에서는 컴퓨터와 같은 Wi-Fi에서 Vite가 출력하는 Network 주소로 접속할 수 있습니다.
 
+### 발행 전 콘텐츠 로컬 미리보기
+
+작성한 콘텐츠와 이미지를 실제 앱 화면으로 확인하려면 아래처럼 실행합니다.
+
+```sh
+CONTENT_FILE=content/drafts/2026-10-12-briefing.json npm run dev:content
+```
+
+http://127.0.0.1:5174 에서 확인합니다. 표지·4컷 만화·본문 이미지는 로컬 `content/images/`에서 불러옵니다. JSON 수정 후 새로고침하면 반영됩니다. `CONTENT_FILE`을 생략하면 `content/today.json`을 읽습니다. 이 명령은 공개 콘텐츠를 배포하지 않습니다.
+
 ```sh
 npm run build
 npm run preview

@@ -1,0 +1,30 @@
+{
+  "mode": "built-in image_gen",
+  "reference": "content/images/2026-10-11/comic-summary-v2.png",
+  "assets": [
+    {
+      "name": "flow-cover-v3",
+      "prompt": "Create a new editorial illustration for a Korean economy news app. Use reference ONLY for character/style: cute brown otter, cream muzzle and belly, round ears, whiskers, expressive eyebrows, bold clean black outlines, warm pastel palette. No housing story. Landscape 3:2. Otter news detective studying a flowing ribbon connecting an oil barrel, a bank with rising coin stacks, gold bars and dollar bills. Dark teal and warm gold palette, rich detail upper half, subdued uncluttered lower half for overlaid white headline. No text or letters."
+    },
+    {
+      "name": "flow-oil-v3",
+      "prompt": "Create a new editorial illustration for a Korean economy news app. Use reference ONLY for character/style: cute brown otter, cream muzzle and belly, round ears, whiskers, expressive eyebrows, bold clean black outlines, warm pastel palette. No housing story. Landscape 3:2. Otter watches a television showing an oil tanker and oil barrels with a small storm cloud above them. Otter curious and concerned, cozy living room. Symbolic supply uncertainty, no war or weapons. No text or letters."
+    },
+    {
+      "name": "flow-rates-v3",
+      "prompt": "Create a new editorial illustration for a Korean economy news app. Use reference ONLY for character/style: cute brown otter, cream muzzle and belly, round ears, whiskers, expressive eyebrows, bold clean black outlines, warm pastel palette. No housing story. Landscape 3:2. Otter follows a path from oil barrel to rising stacks of coins in front of a classical bank building, visualizing higher energy costs and interest rates. Clean mint background, clear visual progression. No text or letters."
+    },
+    {
+      "name": "flow-gold-v3",
+      "prompt": "Create a new editorial illustration for a Korean economy news app. Use reference ONLY for character/style: cute brown otter, cream muzzle and belly, round ears, whiskers, expressive eyebrows, bold clean black outlines, warm pastel palette. No housing story. Landscape 3:2. Otter puzzled in front of a gold shop display, gold bars with a downward blue arrow on one side and small queue of other friendly otters on the other side. Falling price yet eager buyers, no investment endorsement. No text or letters."
+    },
+    {
+      "name": "flow-fx-v3",
+      "prompt": "Create a new editorial illustration for a Korean economy news app. Use reference ONLY for character/style: cute brown otter, cream muzzle and belly, round ears, whiskers, expressive eyebrows, bold clean black outlines, warm pastel palette. No housing story. Landscape 3:2. Otter at exchange counter compares a gold bar and a dollar bill with Korean won coins, cargo ship visible outside symbolizing export dollar supply. Thoughtful calm expression. No text or letters."
+    },
+    {
+      "name": "flow-comic-v3",
+      "prompt": "Create a new editorial illustration for a Korean economy news app. Use reference ONLY for character/style: cute brown otter, cream muzzle and belly, round ears, whiskers, expressive eyebrows, bold clean black outlines, warm pastel palette. No housing story. Portrait 2x2 four panel comic, rounded black frames and white gutters, mobile readable large Korean speech bubbles, no outside title. Panel1 otter watches news with oil tanker and barrel, bubble exactly '기름값 불안이 시작이네!' Panel2 otter sees bank and rising coin stacks, bubble exactly '물가 걱정에 금리도 높아져!' Panel3 gold bars and downward arrow, surprised otter, bubble exactly '이자 없는 금은 부담이구나!' Panel4 otter studies dollar and won at exchange counter, bubble exactly '한국에선 환율까지 봐야 해!' No other text, no statistics, all four panels equal size."
+    }
+  ]
+}
