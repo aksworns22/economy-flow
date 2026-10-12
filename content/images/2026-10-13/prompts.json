@@ -1,0 +1,33 @@
+{
+  "mode": "built-in image_gen",
+  "referenceImages": [
+    "content/images/2026-10-12/flow-cover-v3.png",
+    "content/images/2026-10-12/flow-comic-v3.png"
+  ],
+  "assets": [
+    {
+      "name": "comic-v1",
+      "prompt": "Use case: illustration-story. Create a polished Korean daily economics editorial illustration. Reference image only for the exact brown otter character design and rich hand-painted cartoon rendering: round cream face and belly, small ears, black eyes/nose, whiskers, inquisitive expressive brows. New scene, not the oil/gold scene in reference. No logos, watermarks or text unless explicitly requested. Asset type: single portrait 2x2 four-panel comic, reading top-left top-right bottom-left bottom-right, clean thick black rounded borders, white gutters, readable large Korean lettering. Each panel has one speech bubble with EXACT given Korean text and the reference otter. Panel 1 otter surprised at an operational used oil tanker beside distant shipyard building a new tanker; speech: \"지금 쓸 배가 더 비싸!\" Panel 2 otter in warm coat points toward a container ship sailing arctic icy sea, speech: \"다른 바닷길도 시험해!\" Panel 3 otter looks at an empty freight container interior and clipboard, speech: \"돌아올 때 실을 짐은?\" Panel 4 otter checks raw materials stored in warehouse, speech: \"원료 확보도 함께 준비!\" No extra title, date, captions, panel numbers, charts or decorative text. Visual shows distinct oil tanker versus container ship accurately. Vibrant polished cartoon, 6:7 portrait ratio."
+    },
+    {
+      "name": "tanker-v1",
+      "prompt": "Use case: illustration-story. Create a polished Korean daily economics editorial illustration. Reference image only for the exact brown otter character design and rich hand-painted cartoon rendering: round cream face and belly, small ears, black eyes/nose, whiskers, inquisitive expressive brows. New scene, not the oil/gold scene in reference. No logos, watermarks or text unless explicitly requested. Asset type: landscape section illustration 3:2. Otter on harbor pier astonished at a ready-to-sail weathered oil tanker, a row of gold coins symbolizing its value in foreground; far background new tanker under construction in dry dock, cranes and incomplete hull. A small clock motif at dock contrasts immediate use versus waiting. Oil tanker has pipes on flat deck, not containers. Luminous ocean blue and warm amber; no text or numbers."
+    },
+    {
+      "name": "arctic-v1",
+      "prompt": "Use case: illustration-story. Create a polished Korean daily economics editorial illustration. Reference image only for the exact brown otter character design and rich hand-painted cartoon rendering: round cream face and belly, small ears, black eyes/nose, whiskers, inquisitive expressive brows. New scene, not the oil/gold scene in reference. No logos, watermarks or text unless explicitly requested. Asset type: landscape section illustration 3:2. Otter explorer in mustard parka aboard a container ship bridge watches a medium container vessel proceeding through a wide open channel with floating ice, low snow-covered coasts. Calm daylight, turquoise and navy waters, airy clouds, vibrant editorial cartoon, sense of exploration rather than triumph. No map, no geographic claims, no writing or labels."
+    },
+    {
+      "name": "cargo-v1",
+      "prompt": "Use case: illustration-story. Create a polished Korean daily economics editorial illustration. Reference image only for the exact brown otter character design and rich hand-painted cartoon rendering: round cream face and belly, small ears, black eyes/nose, whiskers, inquisitive expressive brows. New scene, not the oil/gold scene in reference. No logos, watermarks or text unless explicitly requested. Asset type: landscape section illustration 3:2. Otter port logistics analyst with clipboard on a dock between loaded export containers at left and a visibly empty open container at right. Otter has thoughtful worried expression, looks into empty container. Crane and returning container ship in distance, balanced composition, warm daylight, teal shadows. Visual metaphor for return cargo challenge, no literal data visualization, no text or logos."
+    },
+    {
+      "name": "supply-v1",
+      "prompt": "Use case: illustration-story. Create a polished Korean daily economics editorial illustration. Reference image only for the exact brown otter character design and rich hand-painted cartoon rendering: round cream face and belly, small ears, black eyes/nose, whiskers, inquisitive expressive brows. New scene, not the oil/gold scene in reference. No logos, watermarks or text unless explicitly requested. Asset type: landscape section illustration 3:2. Otter warehouse coordinator with a clipboard examines neatly organized industrial raw materials, metal coils, sealed drums, crates of components, in a bright secure warehouse. Two loading doors with delivery trucks suggest alternative supply routes, crane and port in far background. Blue teal and amber consistent editorial art, reassuring preparedness, no hazard or war imagery, no writing or numbers."
+    },
+    {
+      "name": "cover-v2",
+      "prompt": "Mobile portrait revision: center the otter and oil tankers, preserve dark lower gradient for title"
+    }
+  ]
+}
